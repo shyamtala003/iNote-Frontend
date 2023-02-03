@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./NoteContext";
 
 const NoteState = (props) => {
-  let host = "https://inote-backend-whkx.onrender.com/";
+  let host = "https://jittery-fish-slippers.cyclic.app";
   const token = localStorage.getItem("token");
   let notes = [];
   const [userNotes, setUserNotes] = useState(notes);

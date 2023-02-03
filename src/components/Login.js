@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ setIsUserLoggedIn }) => {
-  let host = "https://inote-backend-whkx.onrender.com";
+  let host = "https://jittery-fish-slippers.cyclic.app";
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 

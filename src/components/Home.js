@@ -10,9 +10,8 @@ function Home() {
   useEffect(() => {
     if (localStorage.getItem("token") === null) {
       navigate("/login");
-      console.log("not found");
     }
-  }, []);
+  }, [navigate]);
 
   let { userNotes, fetchNote } = useContext(NoteContext);
   const [alertMSG, setAlertMSG] = useState("");
