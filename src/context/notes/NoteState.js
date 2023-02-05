@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import NoteContext from "./NoteContext";
 
 const NoteState = (props) => {
-  let host = "https://jittery-fish-slippers.cyclic.app";
+  let host = "http://localhost:5000";
   const token = localStorage.getItem("token");
   let notes = [];
   const [userNotes, setUserNotes] = useState(notes);
+  const [loading, setLoading] = useState(false);
 
   // function:0 fetch all notes from database
   let fetchNote = async () => {
@@ -22,6 +23,7 @@ const NoteState = (props) => {
 
   //fuction:1 adding notes into data base
   let addNote = async (title, description, tag) => {
+    setLoading(true);
     await fetch(`${host}/api/notes/addnote`, {
       method: "POST",
       headers: {
@@ -34,7 +36,6 @@ const NoteState = (props) => {
         tag: tag,
       }),
     });
-
     fetchNote();
   };
 
@@ -75,6 +76,8 @@ const NoteState = (props) => {
         deleteNote: deleteNote,
         updateNote: updateNote,
         fetchNote: fetchNote,
+        loading: loading,
+        setLoading: setLoading,
       }}
     >
       {props.children}
