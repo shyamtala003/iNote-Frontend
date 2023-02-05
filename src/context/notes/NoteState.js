@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./NoteContext";
 
 const NoteState = (props) => {
-  let host = "http://localhost:5000";
+  let host = "https://jittery-fish-slippers.cyclic.app";
   const token = localStorage.getItem("token");
   let notes = [];
   const [userNotes, setUserNotes] = useState(notes);
