@@ -9,7 +9,7 @@ const NoteItem = (props) => {
       <h5 className="mt-4 mb-2 capitalize text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
         {note.title}
       </h5>
-      <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+      <p className="mb-3 font-normal break-words text-gray-700 dark:text-gray-400">
         {note.description}
       </p>
 
