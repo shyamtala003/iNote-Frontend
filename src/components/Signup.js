@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Signup = ({ setIsUserLoggedIn }) => {
-  let host = "https://jittery-fish-slippers.cyclic.app";
+  let host = process.env.REACT_APP_BASH_URL;
+  // let host = "https://jittery-fish-slippers.cyclic.app";
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     name: "",
